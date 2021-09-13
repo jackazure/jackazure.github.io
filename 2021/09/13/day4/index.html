@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>徐明勇的技术专栏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="title: day4category: Python基础date: 2021-7-16 1.列表(list)1.1说明1)列表是容器型数据类型(序列),符号[],各个元素用逗号隔开2)容器的特征:一个容器可以保存多个数据3)元素:容器中每个独立的数据就是一个元素4)列表是可变的(元素个数,值和顺序都可以改变) - 增,删,改,支持下标操作5)列表对元素没有要求(任何类型数据都可以作为列表的元素)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="徐明勇的技术专栏">
+<meta property="og:url" content="http://lxmy.top/2021/09/13/day4/index.html">
+<meta property="og:site_name" content="徐明勇的技术专栏">
+<meta property="og:description" content="title: day4category: Python基础date: 2021-7-16 1.列表(list)1.1说明1)列表是容器型数据类型(序列),符号[],各个元素用逗号隔开2)容器的特征:一个容器可以保存多个数据3)元素:容器中每个独立的数据就是一个元素4)列表是可变的(元素个数,值和顺序都可以改变) - 增,删,改,支持下标操作5)列表对元素没有要求(任何类型数据都可以作为列表的元素)">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-09-13T12:37:59.529Z">
+<meta property="article:modified_time" content="2021-09-13T12:08:37.694Z">
+<meta property="article:author" content="徐明勇">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="徐明勇的技术专栏" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">徐明勇的技术专栏</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">GoodGoodStudy</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lxmy.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-day4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/13/day4/" class="article-date">
+  <time class="dt-published" datetime="2021-09-13T12:37:59.529Z" itemprop="datePublished">2021-09-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>title: day4<br>category: Python基础<br>date: 2021-7-16</p>
+<h1 id="1-列表-list"><a href="#1-列表-list" class="headerlink" title="1.列表(list)"></a>1.列表(list)</h1><h2 id="1-1说明"><a href="#1-1说明" class="headerlink" title="1.1说明"></a>1.1说明</h2><h3 id="1-列表是容器型数据类型-序列-符号-各个元素用逗号隔开"><a href="#1-列表是容器型数据类型-序列-符号-各个元素用逗号隔开" class="headerlink" title="1)列表是容器型数据类型(序列),符号[],各个元素用逗号隔开"></a>1)列表是容器型数据类型(序列),符号[],各个元素用逗号隔开</h3><h3 id="2-容器的特征-一个容器可以保存多个数据"><a href="#2-容器的特征-一个容器可以保存多个数据" class="headerlink" title="2)容器的特征:一个容器可以保存多个数据"></a>2)容器的特征:一个容器可以保存多个数据</h3><h3 id="3-元素-容器中每个独立的数据就是一个元素"><a href="#3-元素-容器中每个独立的数据就是一个元素" class="headerlink" title="3)元素:容器中每个独立的数据就是一个元素"></a>3)元素:容器中每个独立的数据就是一个元素</h3><h3 id="4-列表是可变的-元素个数-值和顺序都可以改变-增-删-改-支持下标操作"><a href="#4-列表是可变的-元素个数-值和顺序都可以改变-增-删-改-支持下标操作" class="headerlink" title="4)列表是可变的(元素个数,值和顺序都可以改变) - 增,删,改,支持下标操作"></a>4)列表是可变的(元素个数,值和顺序都可以改变) - 增,删,改,支持下标操作</h3><h3 id="5-列表对元素没有要求-任何类型数据都可以作为列表的元素"><a href="#5-列表对元素没有要求-任何类型数据都可以作为列表的元素" class="headerlink" title="5)列表对元素没有要求(任何类型数据都可以作为列表的元素)"></a>5)列表对元素没有要求(任何类型数据都可以作为列表的元素)</h3><h2 id="1-2空列表"><a href="#1-2空列表" class="headerlink" title="1.2空列表"></a>1.2空列表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list1 = []</span><br><span class="line">list2 = [ ]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(list1),<span class="built_in">type</span>(list2),<span class="built_in">len</span>(list1),<span class="built_in">len</span>(list2))</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3列表可以保存多个数据"><a href="#1-3列表可以保存多个数据" class="headerlink" title="1.3列表可以保存多个数据"></a>1.3列表可以保存多个数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list3 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>]</span><br><span class="line"><span class="built_in">print</span>(list3,<span class="built_in">len</span>(list3))</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-4查-获取元素"><a href="#1-4查-获取元素" class="headerlink" title="1.4查 - 获取元素"></a>1.4查 - 获取元素</h2><h3 id="1-查分三种情况-获取单个元素-切片-遍历-一个一个取"><a href="#1-查分三种情况-获取单个元素-切片-遍历-一个一个取" class="headerlink" title="1)查分三种情况:获取单个元素,切片,遍历(一个一个取)"></a>1)查分三种情况:获取单个元素,切片,遍历(一个一个取)</h3><h3 id="2-语法：列表-下标"><a href="#2-语法：列表-下标" class="headerlink" title="2)语法：列表[下标]"></a>2)语法：列表[下标]</h3><h3 id="3-说明：列表-任何结果是列表的表达式-保存列表的变量-具体的列表值"><a href="#3-说明：列表-任何结果是列表的表达式-保存列表的变量-具体的列表值" class="headerlink" title="3)说明：列表 - 任何结果是列表的表达式:保存列表的变量,具体的列表值"></a>3)说明：列表 - 任何结果是列表的表达式:保存列表的变量,具体的列表值</h3><h3 id="4-下标-又叫索引-是元素在有序序列中的位置信息-从左往右从0开始-从又往左从-1开始"><a href="#4-下标-又叫索引-是元素在有序序列中的位置信息-从左往右从0开始-从又往左从-1开始" class="headerlink" title="4)下标: 又叫索引,是元素在有序序列中的位置信息,从左往右从0开始,从又往左从-1开始"></a>4)下标: 又叫索引,是元素在有序序列中的位置信息,从左往右从0开始,从又往左从-1开始</h3><h3 id="5-功能-获取列表指定下标对应的元素"><a href="#5-功能-获取列表指定下标对应的元素" class="headerlink" title="5)功能: 获取列表指定下标对应的元素"></a>5)功能: 获取列表指定下标对应的元素</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list4 = [<span class="string">&quot;安琪拉&quot;</span>,<span class="string">&quot;韩信&quot;</span>,<span class="string">&quot;鲁班&quot;</span>,<span class="string">&quot;虞姬&quot;</span>,<span class="string">&quot;孙悟空&quot;</span>,<span class="string">&quot;李白&quot;</span>]</span><br><span class="line"><span class="built_in">print</span>(list4.index(<span class="string">&quot;韩信&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(list4[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-5遍历-将列表中元素一个一个取出来"><a href="#1-5遍历-将列表中元素一个一个取出来" class="headerlink" title="1.5遍历 - 将列表中元素一个一个取出来"></a>1.5遍历 - 将列表中元素一个一个取出来</h2><h3 id="方式1-直接输出元素"><a href="#方式1-直接输出元素" class="headerlink" title="方式1 - 直接输出元素"></a>方式1 - 直接输出元素</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list5 = [<span class="string">&quot;安琪拉&quot;</span>,<span class="string">&quot;韩信&quot;</span>,<span class="string">&quot;鲁班&quot;</span>,<span class="string">&quot;虞姬&quot;</span>,<span class="string">&quot;孙悟空&quot;</span>,<span class="string">&quot;李白&quot;</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list5:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span>*<span class="number">20</span>+<span class="string">&#x27;华丽的分割线&#x27;</span>+<span class="string">&#x27;-&#x27;</span>*<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="方式2-由下标找到值"><a href="#方式2-由下标找到值" class="headerlink" title="方式2 - 由下标找到值"></a>方式2 - 由下标找到值</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list6 = [<span class="string">&quot;安琪拉&quot;</span>,<span class="string">&quot;韩信&quot;</span>,<span class="string">&quot;鲁班&quot;</span>,<span class="string">&quot;虞姬&quot;</span>,<span class="string">&quot;孙悟空&quot;</span>,<span class="string">&quot;李白&quot;</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(list6)):  <span class="comment"># range(-1,-len(list6)-1,-1)</span></span><br><span class="line">    <span class="built_in">print</span>(list6[i])</span><br></pre></td></tr></table></figure>
+
+<h3 id="方式3-同时获取元素和下标"><a href="#方式3-同时获取元素和下标" class="headerlink" title="方式3 - 同时获取元素和下标"></a>方式3 - 同时获取元素和下标</h3><h4 id="说明-for-下标-元素-in-enumerate-列表"><a href="#说明-for-下标-元素-in-enumerate-列表" class="headerlink" title="说明: for 下标,元素 in enumerate(列表):"></a>说明: for 下标,元素 in enumerate(列表):</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list7 = [<span class="string">&quot;安琪拉&quot;</span>,<span class="string">&quot;韩信&quot;</span>,<span class="string">&quot;鲁班&quot;</span>,<span class="string">&quot;虞姬&quot;</span>,<span class="string">&quot;孙悟空&quot;</span>,<span class="string">&quot;李白&quot;</span>]</span><br><span class="line"><span class="keyword">for</span> index,item <span class="keyword">in</span> <span class="built_in">enumerate</span>(list7):</span><br><span class="line">    <span class="built_in">print</span>(index,item)</span><br></pre></td></tr></table></figure>
+
+<h4 id="练习1：统计不及格的人数"><a href="#练习1：统计不及格的人数" class="headerlink" title="练习1：统计不及格的人数"></a>练习1：统计不及格的人数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scores = [<span class="number">89</span>,<span class="number">67</span>,<span class="number">56</span>,<span class="number">90</span>,<span class="number">98</span>,<span class="number">30</span>,<span class="number">78</span>,<span class="number">51</span>,<span class="number">99</span>]</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> scores:</span><br><span class="line">    <span class="keyword">if</span> i &lt; <span class="number">60</span>:</span><br><span class="line">        count+=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;不及格的人数是&quot;</span>,count)</span><br></pre></td></tr></table></figure>
+
+<h4 id="练习2：统计列表中的整数个数"><a href="#练习2：统计列表中的整数个数" class="headerlink" title="练习2：统计列表中的整数个数"></a>练习2：统计列表中的整数个数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">list8 = [<span class="number">89</span>,<span class="number">9.9</span>,<span class="string">&#x27;abc&#x27;</span>,<span class="literal">True</span>,<span class="string">&#x27;abc&#x27;</span>,<span class="string">&#x27;10&#x27;</span>,<span class="number">81</span>,<span class="number">90</span>,<span class="number">23</span>]</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list8:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(i) == <span class="built_in">int</span>:</span><br><span class="line">        count+=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;列表中的整数个数是&quot;</span>,count)</span><br></pre></td></tr></table></figure>
+
+<h4 id="练习3：求-nums-中所有偶数的和"><a href="#练习3：求-nums-中所有偶数的和" class="headerlink" title="练习3：求 nums 中所有偶数的和"></a>练习3：求 nums 中所有偶数的和</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nums = [<span class="number">89</span>,<span class="number">67</span>,<span class="number">56</span>,<span class="number">90</span>,<span class="number">98</span>,<span class="number">30</span>,<span class="number">78</span>,<span class="number">51</span>,<span class="number">99</span>]</span><br><span class="line">sum1 = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> nums:</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        sum1+=i</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;nums中所有偶数的和是&quot;</span>,sum1)</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-6-增-添加元素"><a href="#1-6-增-添加元素" class="headerlink" title="1.6 增 - 添加元素"></a>1.6 增 - 添加元素</h2><h3 id="1-6-1添加单个元素"><a href="#1-6-1添加单个元素" class="headerlink" title="1.6.1添加单个元素"></a>1.6.1添加单个元素</h3><h4 id="1-列表-append-元素-在列表的最后添加一个元素"><a href="#1-列表-append-元素-在列表的最后添加一个元素" class="headerlink" title="1)列表.append(元素) - 在列表的最后添加一个元素"></a>1)列表.append(元素) - 在列表的最后添加一个元素</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">movies = [<span class="string">&#x27;速度与激情&#x27;</span>,<span class="string">&#x27;复仇者&#x27;</span>,<span class="string">&#x27;极盗者&#x27;</span>,<span class="string">&#x27;红海行动&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(movies)</span><br><span class="line">movies.append(<span class="string">&#x27;战狼&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(movies)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-列表-insert-下标-元素-在指定下标对应元素前插入指定元素"><a href="#2-列表-insert-下标-元素-在指定下标对应元素前插入指定元素" class="headerlink" title="2)列表.insert(下标,元素) - 在指定下标对应元素前插入指定元素"></a>2)列表.insert(下标,元素) - 在指定下标对应元素前插入指定元素</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">movies = [<span class="string">&#x27;速度与激情&#x27;</span>,<span class="string">&#x27;复仇者&#x27;</span>,<span class="string">&#x27;极盗者&#x27;</span>,<span class="string">&#x27;红海行动&#x27;</span>]</span><br><span class="line"><span class="comment">#在&#x27;极盗者&#x27;前面插入&#x27;战狼&#x27;</span></span><br><span class="line">movies.insert(movies.index(<span class="string">&#x27;极盗者&#x27;</span>),<span class="string">&#x27;战狼&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(movies)</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-列表1-extend-列表2-将列表2元素全部添加到列表1的后面"><a href="#3-列表1-extend-列表2-将列表2元素全部添加到列表1的后面" class="headerlink" title="3)列表1. extend(列表2) - 将列表2元素全部添加到列表1的后面"></a>3)列表1. extend(列表2) - 将列表2元素全部添加到列表1的后面</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">movies = [<span class="string">&#x27;速度与激情&#x27;</span>,<span class="string">&#x27;复仇者&#x27;</span>,<span class="string">&#x27;极盗者&#x27;</span>,<span class="string">&#x27;红海行动&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(movies)</span><br><span class="line">movies.extend([<span class="string">&#x27;战狼&#x27;</span>,<span class="string">&#x27;触不可及&#x27;</span>,<span class="string">&#x27;V字仇杀队&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(movies)</span><br></pre></td></tr></table></figure>
+
+<h4 id="练习1-将scores中所有及格的分数提取出来"><a href="#练习1-将scores中所有及格的分数提取出来" class="headerlink" title="练习1:将scores中所有及格的分数提取出来"></a>练习1:将scores中所有及格的分数提取出来</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scores = [<span class="number">89</span>,<span class="number">67</span>,<span class="number">56</span>,<span class="number">90</span>,<span class="number">98</span>,<span class="number">30</span>,<span class="number">78</span>,<span class="number">51</span>,<span class="number">99</span>]</span><br><span class="line">aa = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> scores:</span><br><span class="line">    <span class="keyword">if</span> i &gt; <span class="number">60</span>:</span><br><span class="line">        aa.append(i)</span><br><span class="line"><span class="built_in">print</span>(aa)</span><br></pre></td></tr></table></figure>
+
+<h1 id="循环练习题"><a href="#循环练习题" class="headerlink" title="循环练习题"></a>循环练习题</h1><h2 id="1-判断101-200之间有多少个素数，并输出所有素数。"><a href="#1-判断101-200之间有多少个素数，并输出所有素数。" class="headerlink" title="1.判断101-200之间有多少个素数，并输出所有素数。"></a>1.判断101-200之间有多少个素数，并输出所有素数。</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">101</span>,<span class="number">201</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,i):</span><br><span class="line">        <span class="keyword">if</span> i % j == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        count+=<span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(i,<span class="string">&quot;是素数&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;一共有&quot;</span>,count,<span class="string">&quot;个素数&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-求整数1-100的累加值，但要求跳过所有个位为3的数。"><a href="#2-求整数1-100的累加值，但要求跳过所有个位为3的数。" class="headerlink" title="2.求整数1~100的累加值，但要求跳过所有个位为3的数。"></a>2.求整数1~100的累加值，但要求跳过所有个位为3的数。</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sum1 = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">101</span>):</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">10</span> !=<span class="number">3</span>:</span><br><span class="line">        sum1 += i</span><br><span class="line"><span class="built_in">print</span>(sum1)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-有⼀分数序列：2-1-3-2-5-3-8-5-13-8-21-13…求出这个数列的第20个分数"><a href="#3-有⼀分数序列：2-1-3-2-5-3-8-5-13-8-21-13…求出这个数列的第20个分数" class="headerlink" title="3.有⼀分数序列：2/1,3/2,5/3,8/5,13/8,21/13…求出这个数列的第20个分数"></a>3.有⼀分数序列：2/1,3/2,5/3,8/5,13/8,21/13…求出这个数列的第20个分数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n1 = <span class="number">1</span></span><br><span class="line">n2 = <span class="number">2</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">19</span>):</span><br><span class="line">    n1,n2=n2,n1+n2</span><br><span class="line"><span class="built_in">print</span>(n2,<span class="string">&quot;/&quot;</span>,n1)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-写程序计算-n-的阶乘-n-的结果"><a href="#4-写程序计算-n-的阶乘-n-的结果" class="headerlink" title="4.写程序计算 n 的阶乘 n! 的结果"></a>4.写程序计算 n 的阶乘 n! 的结果</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入一个正整数：&quot;</span>))</span><br><span class="line">m = n</span><br><span class="line">k = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> n:</span><br><span class="line">    k*=n</span><br><span class="line">    n=n-<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(m,<span class="string">&quot;的阶乘是&quot;</span>,k)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-求1-2-3-…-20-的和"><a href="#5-求1-2-3-…-20-的和" class="headerlink" title="5.求1+2!+3!+…+20!的和"></a>5.求1+2!+3!+…+20!的和</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sum1 = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">21</span>):</span><br><span class="line">    k = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i:</span><br><span class="line">        k *= i</span><br><span class="line">        i -= <span class="number">1</span></span><br><span class="line">    sum1 += k</span><br><span class="line"><span class="built_in">print</span>(sum1)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="6-写程序求表达式-a-aa-aaa-aaaa-…-的结果，其中a是1-9的数字，求和的项数用n来控制。（a和n可以用变量来表示）"><a href="#6-写程序求表达式-a-aa-aaa-aaaa-…-的结果，其中a是1-9的数字，求和的项数用n来控制。（a和n可以用变量来表示）" class="headerlink" title="6.写程序求表达式 a + aa + aaa + aaaa+ … 的结果，其中a是1~9的数字，求和的项数用n来控制。（a和n可以用变量来表示）"></a>6.写程序求表达式 a + aa + aaa + aaaa+ … 的结果，其中a是1~9的数字，求和的项数用n来控制。（a和n可以用变量来表示）</h2><blockquote>
+<p>例如：a为3， n为5的时候： 3 + 33 + 333 + 3333 + 33333</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">a = random.randint(<span class="number">1</span>,<span class="number">9</span>)</span><br><span class="line">b = a</span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入一个正整数：&quot;</span>))</span><br><span class="line">sum1 = <span class="number">0</span></span><br><span class="line">c = []</span><br><span class="line"><span class="keyword">while</span> n:</span><br><span class="line">    sum1 += a</span><br><span class="line">    n = n-<span class="number">1</span></span><br><span class="line">    c.append(a)</span><br><span class="line">    c.append(<span class="string">&#x27;+&#x27;</span>)</span><br><span class="line">    a = a*<span class="number">10</span> +b</span><br><span class="line">d = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(c)-<span class="number">1</span>):</span><br><span class="line">    d+=<span class="built_in">str</span>(c[i])</span><br><span class="line"><span class="built_in">print</span>(d,<span class="string">&quot;=&quot;</span>,sum1)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="7-控制台输出三角形"><a href="#7-控制台输出三角形" class="headerlink" title="7.控制台输出三角形"></a>7.控制台输出三角形</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">a.根据n的值的不同，输出相应的形状</span><br><span class="line">n = 5时             n = 4</span><br><span class="line">*****               ****</span><br><span class="line">****                ***</span><br><span class="line">***                 **</span><br><span class="line">**                  *</span><br><span class="line">*</span><br><span class="line"></span><br><span class="line">b.根据n的值的不同，输出相应的形状(n为奇数)</span><br><span class="line">n = 5               n = 7</span><br><span class="line">  *                    *</span><br><span class="line"> ***                  ***</span><br><span class="line">*****                *****</span><br><span class="line">                    *******</span><br><span class="line"></span><br><span class="line">c. 根据n的值的不同，输出相应的形状</span><br><span class="line">n = 4</span><br><span class="line">   1</span><br><span class="line">  121</span><br><span class="line"> 12321</span><br><span class="line">1234321</span><br><span class="line"></span><br><span class="line">n = 5</span><br><span class="line">    1</span><br><span class="line">   121</span><br><span class="line">  12321</span><br><span class="line"> 1234321</span><br><span class="line">123454321</span><br></pre></td></tr></table></figure>
+
+<h3 id="a-根据n的值的不同，输出相应的形状"><a href="#a-根据n的值的不同，输出相应的形状" class="headerlink" title="a.根据n的值的不同，输出相应的形状"></a>a.根据n的值的不同，输出相应的形状</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入一个正整数：&quot;</span>))</span><br><span class="line"><span class="keyword">while</span> n:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;*&quot;</span>*n)</span><br><span class="line">    n-=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="b-根据n的值的不同，输出相应的形状-n为奇数"><a href="#b-根据n的值的不同，输出相应的形状-n为奇数" class="headerlink" title="b.根据n的值的不同，输出相应的形状(n为奇数)"></a>b.根据n的值的不同，输出相应的形状(n为奇数)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入一个正整数：&quot;</span>))</span><br><span class="line">i = <span class="built_in">int</span>((n+<span class="number">1</span>)/<span class="number">2</span>)</span><br><span class="line">j = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot; &quot;</span>*i,<span class="string">&quot;*&quot;</span>*j)</span><br><span class="line">    i -= <span class="number">1</span></span><br><span class="line">    j += <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="c-根据n的值的不同，输出相应的形状"><a href="#c-根据n的值的不同，输出相应的形状" class="headerlink" title="c. 根据n的值的不同，输出相应的形状"></a>c. 根据n的值的不同，输出相应的形状</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入整数n：&#x27;</span>))</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>):  </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-x):  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27; &#x27;</span>, sep=<span class="string">&#x27;&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, x+<span class="number">1</span>):</span><br><span class="line">        <span class="built_in">print</span>(j, sep=<span class="string">&#x27;&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(x-<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>):</span><br><span class="line">        <span class="built_in">print</span>(k, sep=<span class="string">&#x27;&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="8-小明单位发了100元的购物卡，小明到超市买三类洗化用品，洗发水（15元），香皂（2元），牙刷（5元）。要把100元正好花掉，可有哪些购买结合？"><a href="#8-小明单位发了100元的购物卡，小明到超市买三类洗化用品，洗发水（15元），香皂（2元），牙刷（5元）。要把100元正好花掉，可有哪些购买结合？" class="headerlink" title="8.小明单位发了100元的购物卡，小明到超市买三类洗化用品，洗发水（15元），香皂（2元），牙刷（5元）。要把100元正好花掉，可有哪些购买结合？"></a>8.小明单位发了100元的购物卡，小明到超市买三类洗化用品，洗发水（15元），香皂（2元），牙刷（5元）。要把100元正好花掉，可有哪些购买结合？</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>):   <span class="comment">#i是洗发水</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">21</span>):  <span class="comment">#j是牙刷</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">51</span>):  <span class="comment">#k是香皂</span></span><br><span class="line">            <span class="keyword">if</span> i*<span class="number">15</span> + j*<span class="number">5</span> +k*<span class="number">2</span> == <span class="number">100</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;可以购买洗发水，牙刷，香皂个数分别为：&quot;</span>,i,j,k)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="9-一张纸的厚度大约是0-08mm，对折多少次之后能达到珠穆朗玛峰的高度（8848-13米）？"><a href="#9-一张纸的厚度大约是0-08mm，对折多少次之后能达到珠穆朗玛峰的高度（8848-13米）？" class="headerlink" title="9.一张纸的厚度大约是0.08mm，对折多少次之后能达到珠穆朗玛峰的高度（8848.13米）？"></a>9.一张纸的厚度大约是0.08mm，对折多少次之后能达到珠穆朗玛峰的高度（8848.13米）？</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">count = <span class="number">0</span></span><br><span class="line">h = <span class="number">0.08</span></span><br><span class="line">k = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">if</span> h&gt;<span class="number">8848130</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    h = h * <span class="number">2</span>**k</span><br><span class="line">    count+=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(count)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="10-古典问题：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？"><a href="#10-古典问题：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？" class="headerlink" title="10.古典问题：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？"></a>10.古典问题：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">n1 = <span class="number">1</span></span><br><span class="line">n2 = <span class="number">1</span></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入是第几个月：&quot;</span>))</span><br><span class="line"><span class="keyword">if</span> n == <span class="number">1</span> <span class="keyword">or</span> n == <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">print</span>(n,<span class="string">&quot;个月的兔子数是：&quot;</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">3</span>):</span><br><span class="line">        n1,n2=n2,n1+n2</span><br><span class="line">    <span class="built_in">print</span>(n,<span class="string">&quot;个月的兔子数是：&quot;</span>,n1+n2)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="11-将一个正整数分解质因数。例如-输入90-打印出90-2x3x3x5。"><a href="#11-将一个正整数分解质因数。例如-输入90-打印出90-2x3x3x5。" class="headerlink" title="11.将一个正整数分解质因数。例如:输入90,打印出90=2x3x3x5。"></a>11.将一个正整数分解质因数。例如:输入90,打印出90=2x3x3x5。</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入一个正整数：&quot;</span>))</span><br><span class="line">m = n</span><br><span class="line">flag = <span class="literal">False</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,n):</span><br><span class="line">    <span class="keyword">if</span> n % i == <span class="number">0</span>:</span><br><span class="line">        flag = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(n,<span class="string">&quot;=&quot;</span>,<span class="number">1</span>,<span class="string">&quot;×&quot;</span>,n)</span><br><span class="line"><span class="keyword">if</span> flag == <span class="literal">True</span>:</span><br><span class="line">    k = <span class="number">2</span></span><br><span class="line">    aa = []</span><br><span class="line">    <span class="keyword">while</span> n:</span><br><span class="line">        <span class="keyword">if</span> n % k ==<span class="number">0</span>:</span><br><span class="line">            aa.append(k)</span><br><span class="line">            aa.append(<span class="string">&#x27;×&#x27;</span>)</span><br><span class="line">            n = n // k</span><br><span class="line">            <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            k +=<span class="number">1</span></span><br><span class="line">    bb = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(aa)-<span class="number">1</span>):</span><br><span class="line">        bb+=<span class="built_in">str</span>(aa[j])</span><br><span class="line">    <span class="built_in">print</span>(m,<span class="string">&quot;=&quot;</span>,bb)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="12-某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，加密规则如下：每位数字都加上5-然后用和除以10的余数代替该数字，再将第一位和第四位交换，第二位和第三位交换。求输入的四位整数加密后的值"><a href="#12-某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，加密规则如下：每位数字都加上5-然后用和除以10的余数代替该数字，再将第一位和第四位交换，第二位和第三位交换。求输入的四位整数加密后的值" class="headerlink" title="12.某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，加密规则如下：每位数字都加上5,然后用和除以10的余数代替该数字，再将第一位和第四位交换，第二位和第三位交换。求输入的四位整数加密后的值"></a>12.某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，加密规则如下：每位数字都加上5,然后用和除以10的余数代替该数字，再将第一位和第四位交换，第二位和第三位交换。求输入的四位整数加密后的值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">input</span>(<span class="string">&quot;请输入一个四位数整数:&quot;</span>)</span><br><span class="line"><span class="keyword">while</span> n:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(n) !=<span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;输入有误,请重新输入&quot;</span>)</span><br><span class="line">        n = <span class="built_in">input</span>(<span class="string">&quot;请输入一个四位数整数:&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        n = <span class="built_in">int</span>(n)</span><br><span class="line">        ge = ((n % <span class="number">10</span>)+<span class="number">5</span>) % <span class="number">10</span></span><br><span class="line">        shi = ((n //<span class="number">10</span>% <span class="number">10</span>)+<span class="number">5</span>) % <span class="number">10</span></span><br><span class="line">        bai = ((n //<span class="number">100</span>% <span class="number">10</span>)+<span class="number">5</span>) % <span class="number">10</span></span><br><span class="line">        qian = ((n //<span class="number">1000</span>)+<span class="number">5</span>) % <span class="number">10</span></span><br><span class="line">        k1 ,k2 =ge,shi</span><br><span class="line">        ge,qian = qian,k1</span><br><span class="line">        shi,bai = bai,k2</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;加密后的值为:&quot;</span>,qian*<span class="number">1000</span>+bai*<span class="number">100</span>+shi*<span class="number">10</span>+ge)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="13-本金10000元存入银行，年利率是千分之三。每过1年，将本金和利息相加作为新的本金。计算5年后，获得的本金是多少。"><a href="#13-本金10000元存入银行，年利率是千分之三。每过1年，将本金和利息相加作为新的本金。计算5年后，获得的本金是多少。" class="headerlink" title="13.本金10000元存入银行，年利率是千分之三。每过1年，将本金和利息相加作为新的本金。计算5年后，获得的本金是多少。"></a>13.本金10000元存入银行，年利率是千分之三。每过1年，将本金和利息相加作为新的本金。计算5年后，获得的本金是多少。</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10000</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    a = a * (<span class="number">1</span>+<span class="number">0.003</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="14-输入一个整数，计算它各位上数字的和。（注意：输入的整数可以是任意位）"><a href="#14-输入一个整数，计算它各位上数字的和。（注意：输入的整数可以是任意位）" class="headerlink" title="14.输入一个整数，计算它各位上数字的和。（注意：输入的整数可以是任意位）"></a>14.输入一个整数，计算它各位上数字的和。（注意：输入的整数可以是任意位）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入一个整数：&quot;</span>))</span><br><span class="line">sum1 = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> n:</span><br><span class="line">    sum1 += n % <span class="number">10</span></span><br><span class="line">    n //=<span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(sum1)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="15-求两个数的最大公约数和最小公倍数。（提示：公约数一定小于等于两数中的小的那个数，且能同时被两个数整除；公倍数一定大于等于两数中的大数，且是大数的倍数又能被两数中的小数整除）"><a href="#15-求两个数的最大公约数和最小公倍数。（提示：公约数一定小于等于两数中的小的那个数，且能同时被两个数整除；公倍数一定大于等于两数中的大数，且是大数的倍数又能被两数中的小数整除）" class="headerlink" title="15.求两个数的最大公约数和最小公倍数。（提示：公约数一定小于等于两数中的小的那个数，且能同时被两个数整除；公倍数一定大于等于两数中的大数，且是大数的倍数又能被两数中的小数整除）"></a>15.求两个数的最大公约数和最小公倍数。（提示：公约数一定小于等于两数中的小的那个数，且能同时被两个数整除；公倍数一定大于等于两数中的大数，且是大数的倍数又能被两数中的小数整除）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">n1 = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入一个整数n1:&quot;</span>))</span><br><span class="line">n2 = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入一个整数n2:&quot;</span>))</span><br><span class="line"><span class="keyword">if</span> n1 &gt; n2:</span><br><span class="line">    k = n1</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    k = n2</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">if</span> k % n1 == <span class="number">0</span> <span class="keyword">and</span> k % n2 ==<span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(n1,<span class="string">&quot;和&quot;</span>,n2,<span class="string">&quot;的最小公倍数是&quot;</span>,k)</span><br><span class="line">        <span class="built_in">print</span>(n1,<span class="string">&quot;和&quot;</span>,n2,<span class="string">&quot;的最大公约数是&quot;</span>,n1*n2//k)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        k+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lxmy.top/2021/09/13/day4/" data-id="cktimunlq000js8ucf8o08nqv" data-title="" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/13/day5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/13/day3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/09/13/day20/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/day19/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/day18/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/day17/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/day17%20(2)/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 徐明勇<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
