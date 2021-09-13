@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>徐明勇的技术专栏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1.requests 代理Ip的使用12345678910111213141516171819202122232425262728293031323334# 1.获取蘑菇代理中的代理Ipimport requestsdef get_ip():    res &#x3D; requests.get(&amp;#x27;http:&#x2F;&#x2F;piping.mogumiao.com&#x2F;proxy&#x2F;api&#x2F;get_ip_bs?app">
+<meta property="og:type" content="article">
+<meta property="og:title" content="徐明勇的技术专栏">
+<meta property="og:url" content="http://lxmy.top/2021/09/13/stage2/2-2%20(3)/index.html">
+<meta property="og:site_name" content="徐明勇的技术专栏">
+<meta property="og:description" content="1.requests 代理Ip的使用12345678910111213141516171819202122232425262728293031323334# 1.获取蘑菇代理中的代理Ipimport requestsdef get_ip():    res &#x3D; requests.get(&amp;#x27;http:&#x2F;&#x2F;piping.mogumiao.com&#x2F;proxy&#x2F;api&#x2F;get_ip_bs?app">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-09-13T00:36:53.714Z">
+<meta property="article:modified_time" content="2021-08-12T11:34:43.680Z">
+<meta property="article:author" content="徐明勇">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="徐明勇的技术专栏" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">徐明勇的技术专栏</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">GoodGoodStudy</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lxmy.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-stage2/2-2 (3)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/13/stage2/2-2%20(3)/" class="article-date">
+  <time class="dt-published" datetime="2021-09-13T00:36:53.714Z" itemprop="datePublished">2021-09-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-requests-代理Ip的使用"><a href="#1-requests-代理Ip的使用" class="headerlink" title="1.requests 代理Ip的使用"></a>1.requests 代理Ip的使用</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.获取蘑菇代理中的代理Ip</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_ip</span>():</span></span><br><span class="line">    res = requests.get(<span class="string">&#x27;http://piping.mogumiao.com/proxy/api/get_ip_bs?appKey=775206edf3dc4329ba04568b75a66a30&amp;count=4&amp;expiryDate=0&amp;format=2&amp;newLine=3&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> res.text[<span class="number">0</span>] == <span class="string">&#x27;&#123;&#x27;</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;提取Ip失败&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> [x <span class="keyword">for</span> x <span class="keyword">in</span> res.text.split(<span class="string">&#x27;\n&#x27;</span>) <span class="keyword">if</span> x]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用代理Ip</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_net_data</span>():</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ips = get_ip()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ips :</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;ip获取失败&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    proxies = &#123;</span><br><span class="line">        <span class="string">&#x27;http&#x27;</span> : ips[<span class="number">0</span>],</span><br><span class="line">        <span class="string">&#x27;https&#x27;</span> : ips[<span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    res = requests.get(<span class="string">&#x27;https://movie/douban.com/top250&#x27;</span>,headers=headers,proxies=proxies)</span><br><span class="line">    <span class="built_in">print</span>(res.text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    get_net_data()</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="2-使用代理的优化程序"><a href="#2-使用代理的优化程序" class="headerlink" title="2.使用代理的优化程序"></a>2.使用代理的优化程序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_ip</span>():</span></span><br><span class="line">    res = requests.get(<span class="string">&#x27;http://piping.mogumiao.com/proxy/api/get_ip_bs?appKey=775206edf3dc4329ba04568b75a66a30&amp;count=4&amp;expiryDate=0&amp;format=2&amp;newLine=3&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> res.text[<span class="number">0</span>] == <span class="string">&#x27;&#123;&#x27;</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;提取Ip失败&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> [x <span class="keyword">for</span> x <span class="keyword">in</span> res.text.split(<span class="string">&#x27;\n&#x27;</span>) <span class="keyword">if</span> x]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_net_data</span>():</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        ips = get_ip()</span><br><span class="line">        <span class="keyword">if</span> ips:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;ip获取成功&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    proxies = &#123;</span><br><span class="line">        <span class="string">&#x27;http&#x27;</span>: ips[<span class="number">1</span>],</span><br><span class="line">        <span class="string">&#x27;https&#x27;</span>: ips[<span class="number">2</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    res = requests.get(<span class="string">&#x27;https://movie.douban.com/top250&#x27;</span>, headers=headers, proxies=proxies)</span><br><span class="line">    <span class="built_in">print</span>(res.text)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    get_net_data()</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="3-selenium的基本功能"><a href="#3-selenium的基本功能" class="headerlink" title="3.selenium的基本功能"></a>3.selenium的基本功能</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> Chrome</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.创建浏览器对象(如果是全局变量,程序结束后浏览器不会关闭,局部变量会自动关闭)</span></span><br><span class="line">b = Chrome()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.输入网址</span></span><br><span class="line">b.get(<span class="string">&#x27;https://www.jd.com&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.获取网页源代码</span></span><br><span class="line"><span class="built_in">print</span>(b.page_source)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.关闭浏览器</span></span><br><span class="line">b.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="4-selenium的简单交互"><a href="#4-selenium的简单交互" class="headerlink" title="4.selenium的简单交互"></a>4.selenium的简单交互</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> Chrome</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.创建浏览器对象</span></span><br><span class="line">b = Chrome()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.打开网页</span></span><br><span class="line">b.get(<span class="string">&#x27;https://www.51job.com/&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.获取标签(输入框)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># search_input = b.find_element_by_id(&#x27;kwdselectid&#x27;)</span></span><br><span class="line">search_input = b.find_element_by_css_selector(<span class="string">&#x27;#kwdselectid&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.在输入框中输入内容</span></span><br><span class="line">search_input.send_keys(<span class="string">&#x27;数据分析&#x27;</span>)</span><br><span class="line"><span class="comment"># 按输入框中回车键</span></span><br><span class="line">search_input.send_keys(Keys.ENTER)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.获取网页数据</span></span><br><span class="line"><span class="comment"># print(b.page_source)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 6.获取下一页对应标签</span></span><br><span class="line"><span class="built_in">next</span> = b.find_element_by_css_selector(<span class="string">&#x27;.next&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 7.点击按钮</span></span><br><span class="line"><span class="built_in">next</span>.click()</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(b.page_source)</span><br><span class="line"></span><br><span class="line">b.close()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> Chrome,ChromeOptions</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_ip</span>():</span></span><br><span class="line">    res = requests.get(<span class="string">&#x27;http://piping.mogumiao.com/proxy/api/get_ip_bs?appKey=775206edf3dc4329ba04568b75a66a30&amp;count=4&amp;expiryDate=0&amp;format=2&amp;newLine=3&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> res.text[<span class="number">0</span>] == <span class="string">&#x27;&#123;&#x27;</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;提取Ip失败&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> [x <span class="keyword">for</span> x <span class="keyword">in</span> res.text.split(<span class="string">&#x27;\n&#x27;</span>) <span class="keyword">if</span> x]</span><br><span class="line"></span><br><span class="line">ips = get_ip()</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    ips = get_ip()</span><br><span class="line">    <span class="keyword">if</span> ips:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;ip获取成功&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.创建谷歌浏览器的配置对象</span></span><br><span class="line">options  = ChromeOptions()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1)添加取消测试环境选项</span></span><br><span class="line">options.add_experimental_option(<span class="string">&#x27;excludeSwitches&#x27;</span>,[<span class="string">&#x27;enable-automation&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2)取消图片加载</span></span><br><span class="line">options.add_experimental_option(<span class="string">&quot;prefs&quot;</span>, &#123;<span class="string">&quot;profile.managed_default_content_settings.images&quot;</span>: <span class="number">2</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3)设置代理</span></span><br><span class="line">options.add_argument(<span class="string">f&#x27;--proxy-server=http://<span class="subst">&#123;ips[<span class="number">2</span>]&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">b = Chrome(options=options)</span><br><span class="line"></span><br><span class="line">b.get(<span class="string">&#x27;https://movie.douban.com/top250&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(b.page_source)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="5-爬取前程无忧网数据分析岗位"><a href="#5-爬取前程无忧网数据分析岗位" class="headerlink" title="5.爬取前程无忧网数据分析岗位"></a>5.爬取前程无忧网数据分析岗位</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> Chrome</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.创建浏览器对象</span></span><br><span class="line">b = Chrome()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.打开网页</span></span><br><span class="line">b.get(<span class="string">&#x27;https://www.51job.com/&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.获取标签(输入框)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># search_input = b.find_element_by_id(&#x27;kwdselectid&#x27;)</span></span><br><span class="line">search_input = b.find_element_by_css_selector(<span class="string">&#x27;#kwdselectid&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.在输入框中输入内容</span></span><br><span class="line">search_input.send_keys(<span class="string">&#x27;数据分析&#x27;</span>)</span><br><span class="line"><span class="comment"># 按输入框中回车键进入数据分析岗位页面</span></span><br><span class="line">search_input.send_keys(Keys.ENTER)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.获取网页数据</span></span><br><span class="line"><span class="comment"># print(b.page_source)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">all_job = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    soup = BeautifulSoup(b.page_source,<span class="string">&#x27;lxml&#x27;</span>)</span><br><span class="line">    <span class="comment"># print(soup)</span></span><br><span class="line"></span><br><span class="line">    all_job_div = soup.select(<span class="string">&#x27;.e&#x27;</span>)</span><br><span class="line">    <span class="comment"># print(all_job_div)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> div <span class="keyword">in</span> all_job_div:</span><br><span class="line">        <span class="keyword">if</span> div.select_one(<span class="string">&#x27;.jname&#x27;</span>):</span><br><span class="line">            job_name = div.select_one(<span class="string">&#x27;.jname&#x27;</span>).get_text()</span><br><span class="line">            job_wages = div.select_one(<span class="string">&#x27;.sal&#x27;</span>).get_text()</span><br><span class="line">            job_demand = div.select_one(<span class="string">&#x27;.d&#x27;</span>).get_text()</span><br><span class="line">            company = div.select_one(<span class="string">&#x27;.cname&#x27;</span>).get_text()</span><br><span class="line">            company_url = div.select_one(<span class="string">&#x27;.er &gt; a&#x27;</span>).attrs[<span class="string">&#x27;href&#x27;</span>]</span><br><span class="line">            all_job.append([job_name,job_wages,job_demand,company,company_url])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 6.获取下一页对应标签</span></span><br><span class="line">    <span class="built_in">next</span> = b.find_element_by_css_selector(<span class="string">&#x27;.next&#x27;</span>)</span><br><span class="line">    <span class="comment"># 7.点击按钮进入下一页</span></span><br><span class="line">    <span class="built_in">next</span>.click()</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">b.quit()</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;files/qianchen.csv&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">writer = csv.writer(f)</span><br><span class="line">writer.writerows(all_job)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lxmy.top/2021/09/13/stage2/2-2%20(3)/" data-id="ckthx4uoo0010xcuce558atak" data-title="" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/13/stage2/2-2%20(4)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/13/stage2/2-2%20(2)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/09/13/stage2/2-2%20(9)/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/stage2/2-2%20(8)/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/stage2/2-2%20(7)/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/stage2/2-2%20(6)/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/stage2/2-2%20(5)/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 徐明勇<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

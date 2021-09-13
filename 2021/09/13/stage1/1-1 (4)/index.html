@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>徐明勇的技术专栏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="基础题 使用for和while循环输出 0~100内所有3的倍数。 使用for和while循环输出100~200内个位数或者十位数能被3整除的数。 统计100~200中十位数是5的数的个数 打印50~150中所有能被3整除但是不能被5整除的数 计算50~150中所有能被3整除但是不能被5整除的数的和  进阶题 使用循环计算1*2*3*4*...*10的结果。  统计100以内个位数是2并且能够被3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="徐明勇的技术专栏">
+<meta property="og:url" content="http://lxmy.top/2021/09/13/stage1/1-1%20(4)/index.html">
+<meta property="og:site_name" content="徐明勇的技术专栏">
+<meta property="og:description" content="基础题 使用for和while循环输出 0~100内所有3的倍数。 使用for和while循环输出100~200内个位数或者十位数能被3整除的数。 统计100~200中十位数是5的数的个数 打印50~150中所有能被3整除但是不能被5整除的数 计算50~150中所有能被3整除但是不能被5整除的数的和  进阶题 使用循环计算1*2*3*4*...*10的结果。  统计100以内个位数是2并且能够被3">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-09-13T00:36:53.666Z">
+<meta property="article:modified_time" content="2021-07-15T09:03:23.285Z">
+<meta property="article:author" content="徐明勇">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="徐明勇的技术专栏" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">徐明勇的技术专栏</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">GoodGoodStudy</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lxmy.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-stage1/1-1 (4)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/13/stage1/1-1%20(4)/" class="article-date">
+  <time class="dt-published" datetime="2021-09-13T00:36:53.666Z" itemprop="datePublished">2021-09-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="基础题"><a href="#基础题" class="headerlink" title="基础题"></a>基础题</h3><ol start="4">
+<li>使用for和while循环输出 0~100内所有3的倍数。</li>
+<li>使用for和while循环输出100~200内个位数或者十位数能被3整除的数。</li>
+<li>统计100~200中十位数是5的数的个数</li>
+<li>打印50~150中所有能被3整除但是不能被5整除的数</li>
+<li>计算50~150中所有能被3整除但是不能被5整除的数的和</li>
+</ol>
+<h3 id="进阶题"><a href="#进阶题" class="headerlink" title="进阶题"></a>进阶题</h3><ol>
+<li><p>使用循环计算<code>1*2*3*4*...*10</code>的结果。</p>
+</li>
+<li><p>统计100以内个位数是2并且能够被3整除的数的个数。</p>
+</li>
+<li><p>输入任意一个正整数，求他是几位数？</p>
+<p><code>注意: 这儿不能使用字符串，只能用循环</code></p>
+</li>
+<li><p>打印出所有的水仙花数,所谓水仙花数是指一个三位数，其各位数字⽴方和等于该数本身。例如:153是 </p>
+<p>⼀个⽔仙花数,因为  <code>1³ + 5³ + 3³ </code> 等于 153。</p>
+</li>
+</ol>
+<h3 id="挑战题"><a href="#挑战题" class="headerlink" title="挑战题"></a>挑战题</h3><ol>
+<li><p>判断指定的数是否是素数（素数就是质数，即除了1和它本身以外不能被其他的数整除的数）</p>
+</li>
+<li><p>求斐波那契数列列中第n个数的值:1，1，2，3，5，8，13，21，34…. （这儿的n可以是任意正整数，可以通过输入来确定）</p>
+</li>
+<li><p>输出9*9口诀。 程序分析：分行与列考虑，共9行9列，i控制行，j控制列。</p>
+</li>
+<li><p>这是经典的”百马百担”问题，有一百匹马，驮一百担货，大马驮3担，中马驮2担，两只小马驮1担，问有大，中，小马各几匹？（可以直接使用穷举法）</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lxmy.top/2021/09/13/stage1/1-1%20(4)/" data-id="ckthx4uoa000mxcucdacu0x3a" data-title="" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/13/stage1/1-1%20(5)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/13/stage1/1-1%20(30)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/09/13/stage2/2-2%20(9)/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/stage2/2-2%20(8)/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/stage2/2-2%20(7)/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/stage2/2-2%20(6)/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/stage2/2-2%20(5)/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 徐明勇<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
