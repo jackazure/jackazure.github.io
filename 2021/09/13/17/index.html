@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>徐明勇的技术专栏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="title: day13category: Python基础date: 2021-7-29 1.迭代器1.1迭代器说明1.1.1迭代器也是容器型数据类型,可以遍历,可以转化成列表和元组1.1.2打印迭代器的时候无法打印里面的元素,迭代器不支持len操作1.1.3如果需要迭代器中的元素,需要从迭代器中取出,取出之后迭代器中就没有了,且不能添加回去1.2创建迭代器12方式1：通过iter将其他序列转换">
+<meta property="og:type" content="article">
+<meta property="og:title" content="徐明勇的技术专栏">
+<meta property="og:url" content="http://lxmy.top/2021/09/13/17/index.html">
+<meta property="og:site_name" content="徐明勇的技术专栏">
+<meta property="og:description" content="title: day13category: Python基础date: 2021-7-29 1.迭代器1.1迭代器说明1.1.1迭代器也是容器型数据类型,可以遍历,可以转化成列表和元组1.1.2打印迭代器的时候无法打印里面的元素,迭代器不支持len操作1.1.3如果需要迭代器中的元素,需要从迭代器中取出,取出之后迭代器中就没有了,且不能添加回去1.2创建迭代器12方式1：通过iter将其他序列转换">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-09-13T12:37:59.568Z">
+<meta property="article:modified_time" content="2021-09-13T12:23:08.727Z">
+<meta property="article:author" content="徐明勇">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="徐明勇的技术专栏" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">徐明勇的技术专栏</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">GoodGoodStudy</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lxmy.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-17" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/13/17/" class="article-date">
+  <time class="dt-published" datetime="2021-09-13T12:37:59.568Z" itemprop="datePublished">2021-09-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>title: day13<br>category: Python基础<br>date: 2021-7-29</p>
+<h1 id="1-迭代器"><a href="#1-迭代器" class="headerlink" title="1.迭代器"></a>1.迭代器</h1><h2 id="1-1迭代器说明"><a href="#1-1迭代器说明" class="headerlink" title="1.1迭代器说明"></a>1.1迭代器说明</h2><h3 id="1-1-1迭代器也是容器型数据类型-可以遍历-可以转化成列表和元组"><a href="#1-1-1迭代器也是容器型数据类型-可以遍历-可以转化成列表和元组" class="headerlink" title="1.1.1迭代器也是容器型数据类型,可以遍历,可以转化成列表和元组"></a>1.1.1迭代器也是容器型数据类型,可以遍历,可以转化成列表和元组</h3><h3 id="1-1-2打印迭代器的时候无法打印里面的元素-迭代器不支持len操作"><a href="#1-1-2打印迭代器的时候无法打印里面的元素-迭代器不支持len操作" class="headerlink" title="1.1.2打印迭代器的时候无法打印里面的元素,迭代器不支持len操作"></a>1.1.2打印迭代器的时候无法打印里面的元素,迭代器不支持len操作</h3><h3 id="1-1-3如果需要迭代器中的元素-需要从迭代器中取出-取出之后迭代器中就没有了-且不能添加回去"><a href="#1-1-3如果需要迭代器中的元素-需要从迭代器中取出-取出之后迭代器中就没有了-且不能添加回去" class="headerlink" title="1.1.3如果需要迭代器中的元素,需要从迭代器中取出,取出之后迭代器中就没有了,且不能添加回去"></a>1.1.3如果需要迭代器中的元素,需要从迭代器中取出,取出之后迭代器中就没有了,且不能添加回去</h3><h2 id="1-2创建迭代器"><a href="#1-2创建迭代器" class="headerlink" title="1.2创建迭代器"></a>1.2创建迭代器</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方式<span class="number">1</span>：通过<span class="built_in">iter</span>将其他序列转换成迭代器</span><br><span class="line">方式<span class="number">2</span>：创建生成器对象(生成器是一种特殊的迭代器)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-3获取迭代器的元素"><a href="#1-3获取迭代器的元素" class="headerlink" title="1.3获取迭代器的元素"></a>1.3获取迭代器的元素</h2><h3 id="1-3-1获取单个元素：next-迭代器"><a href="#1-3-1获取单个元素：next-迭代器" class="headerlink" title="1.3.1获取单个元素：next(迭代器)"></a>1.3.1获取单个元素：next(迭代器)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">iter1 = <span class="built_in">iter</span>(<span class="string">&#x27;abc&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(iter1)) <span class="comment">#a</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(iter1)) <span class="comment">#b</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(iter1)) <span class="comment">#c</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-2获取多个元素：通过循环遍历得到"><a href="#1-3-2获取多个元素：通过循环遍历得到" class="headerlink" title="1.3.2获取多个元素：通过循环遍历得到"></a>1.3.2获取多个元素：通过循环遍历得到</h3><h1 id="2-生成器-generator"><a href="#2-生成器-generator" class="headerlink" title="2.生成器(generator)"></a>2.生成器(generator)</h1><h2 id="2-1生成器是具备能够产生多个数据能力的一种容器。"><a href="#2-1生成器是具备能够产生多个数据能力的一种容器。" class="headerlink" title="2.1生成器是具备能够产生多个数据能力的一种容器。"></a>2.1生成器是具备能够产生多个数据能力的一种容器。</h2><h2 id="2-2生成器在获取数据的时候和迭代器一样"><a href="#2-2生成器在获取数据的时候和迭代器一样" class="headerlink" title="2.2生成器在获取数据的时候和迭代器一样"></a>2.2生成器在获取数据的时候和迭代器一样</h2><h2 id="2-3创建生成器-调用一个带有yield关键字的函数就可以得到一个生成器对象"><a href="#2-3创建生成器-调用一个带有yield关键字的函数就可以得到一个生成器对象" class="headerlink" title="2.3创建生成器 - 调用一个带有yield关键字的函数就可以得到一个生成器对象"></a>2.3创建生成器 - 调用一个带有yield关键字的函数就可以得到一个生成器对象</h2><h2 id="2-4如果一个函数中存在yield-函数调用过程中不会执行函数体-也没有返回值-而是一个生成器对象"><a href="#2-4如果一个函数中存在yield-函数调用过程中不会执行函数体-也没有返回值-而是一个生成器对象" class="headerlink" title="2.4如果一个函数中存在yield,函数调用过程中不会执行函数体,也没有返回值,而是一个生成器对象"></a>2.4如果一个函数中存在yield,函数调用过程中不会执行函数体,也没有返回值,而是一个生成器对象</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;=====&#x27;</span>)</span><br><span class="line">    <span class="keyword">yield</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;+++++&#x27;</span>)</span><br><span class="line"><span class="comment">## 任意一个函数加上yield之后都是一个生成器对象</span></span><br><span class="line">result = func1()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;result:&#x27;</span>,result)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-5-控制生成器产生数据的能力"><a href="#2-5-控制生成器产生数据的能力" class="headerlink" title="2.5 控制生成器产生数据的能力"></a>2.5 控制生成器产生数据的能力</h2><h2 id="执行生成器对应的函数会遇到几次yield-这个生成器就能产生多少个数据"><a href="#执行生成器对应的函数会遇到几次yield-这个生成器就能产生多少个数据" class="headerlink" title="执行生成器对应的函数会遇到几次yield,这个生成器就能产生多少个数据"></a>执行生成器对应的函数会遇到几次yield,这个生成器就能产生多少个数据</h2><h2 id="每次遇到yield的时候-yield后面值就是对应产生的数据"><a href="#每次遇到yield的时候-yield后面值就是对应产生的数据" class="headerlink" title="每次遇到yield的时候,yield后面值就是对应产生的数据"></a>每次遇到yield的时候,yield后面值就是对应产生的数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func2</span>():</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="number">100</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">        <span class="keyword">yield</span> i</span><br><span class="line">gen2 = func2()</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> gen2:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;产生的数据：<span class="subst">&#123;j&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="练习1：创建一个生成器函数-可以产生前N个偶数-偶数从0开始"><a href="#练习1：创建一个生成器函数-可以产生前N个偶数-偶数从0开始" class="headerlink" title="练习1：创建一个生成器函数,可以产生前N个偶数,偶数从0开始"></a>练习1：创建一个生成器函数,可以产生前N个偶数,偶数从0开始</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func3</span>(<span class="params">n</span>):</span></span><br><span class="line">    k = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="keyword">yield</span> k</span><br><span class="line">        k += <span class="number">2</span></span><br><span class="line"></span><br><span class="line">gen3 = func3(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> gen3:</span><br><span class="line">    <span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-6生成器产生数据的原理"><a href="#2-6生成器产生数据的原理" class="headerlink" title="2.6生成器产生数据的原理"></a>2.6生成器产生数据的原理</h2><h3 id="2-6-1通过生成器对象获取数据的时候-才会执行对应的函数-每次遇到yield的时候返回yield后面的数据"><a href="#2-6-1通过生成器对象获取数据的时候-才会执行对应的函数-每次遇到yield的时候返回yield后面的数据" class="headerlink" title="2.6.1通过生成器对象获取数据的时候,才会执行对应的函数,每次遇到yield的时候返回yield后面的数据"></a>2.6.1通过生成器对象获取数据的时候,才会执行对应的函数,每次遇到yield的时候返回yield后面的数据</h3><h3 id="并记录该位置-然后从这里停止-下一次获取数据的时候从上一次结束的位置开始到下一个yield"><a href="#并记录该位置-然后从这里停止-下一次获取数据的时候从上一次结束的位置开始到下一个yield" class="headerlink" title="并记录该位置,然后从这里停止,下一次获取数据的时候从上一次结束的位置开始到下一个yield"></a>并记录该位置,然后从这里停止,下一次获取数据的时候从上一次结束的位置开始到下一个yield</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func4</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;--------1---------&#x27;</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">100</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;--------2---------&#x27;</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">200</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;--------3---------&#x27;</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">300</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;--------end---------&#x27;</span>)</span><br><span class="line"></span><br><span class="line">gen4 = func4()</span><br><span class="line"><span class="built_in">print</span>(gen4)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;取元素：&quot;</span>, <span class="built_in">next</span>(gen4))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;==================&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;取元素：&quot;</span>, <span class="built_in">next</span>(gen4))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;+++++++++++++++++&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;取元素：&quot;</span>, <span class="built_in">next</span>(gen4))</span><br><span class="line"></span><br><span class="line"><span class="comment">## print(&quot;取元素：&quot;,next(gen4))  ## 报错,此时元素已经取完了</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-模块"><a href="#3-模块" class="headerlink" title="3.模块"></a>3.模块</h1><h2 id="3-1-python中一个Py文件就是一个模块"><a href="#3-1-python中一个Py文件就是一个模块" class="headerlink" title="3.1 python中一个Py文件就是一个模块"></a>3.1 python中一个Py文件就是一个模块</h2><h2 id="3-2如何在一个模块中使用另一个模块的内容"><a href="#3-2如何在一个模块中使用另一个模块的内容" class="headerlink" title="3.2如何在一个模块中使用另一个模块的内容"></a>3.2如何在一个模块中使用另一个模块的内容</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>首先被使用的模块的模块名必须是标识符并且不是关键字</span><br><span class="line"><span class="number">2.</span>一个模块可以使用另一个模块中的所有全局变量,使用之前要先导入</span><br><span class="line"><span class="number">3.</span>导入模块 <span class="keyword">import</span> 模块名 - 导入指定模块 导入后通过<span class="string">&#x27;模块名.&#x27;</span>的方式使用该模块中所有的全局变量</span><br><span class="line"><span class="number">4.</span><span class="keyword">from</span> 模块名 <span class="keyword">import</span> 全局变量<span class="number">1</span>,全局变量<span class="number">2.</span>.. - 导入指定模块,可以直接使用指定全局变量</span><br><span class="line"><span class="number">5.</span>form 模块名 <span class="keyword">import</span> * 导入指定模块,可以使用模块中的所有全局变量</span><br><span class="line"><span class="number">6.</span><span class="keyword">import</span> 模块名 <span class="keyword">as</span> 新模块名 将原来的模块名改名作为一个新对象</span><br><span class="line"><span class="number">7.</span><span class="keyword">from</span> 模块名 <span class="keyword">import</span> 全局变量名 <span class="keyword">as</span> 新全局变量名</span><br></pre></td></tr></table></figure>
+<h2 id="3-3导入模块的原理"><a href="#3-3导入模块的原理" class="headerlink" title="3.3导入模块的原理"></a>3.3导入模块的原理</h2><h3 id="3-3-1当通过import或者from-import导入一个模块时-系统会自动将这个模块中的代码执行一遍"><a href="#3-3-1当通过import或者from-import导入一个模块时-系统会自动将这个模块中的代码执行一遍" class="headerlink" title="3.3.1当通过import或者from-import导入一个模块时,系统会自动将这个模块中的代码执行一遍"></a>3.3.1当通过import或者from-import导入一个模块时,系统会自动将这个模块中的代码执行一遍</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> test_2</span><br><span class="line"><span class="built_in">print</span>(test_2.a)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-包的使用-包就是包含-init-py-文件的文件夹"><a href="#4-包的使用-包就是包含-init-py-文件的文件夹" class="headerlink" title="4.包的使用 - 包就是包含__init__.py 文件的文件夹"></a>4.包的使用 - 包就是包含__init__.py 文件的文件夹</h2><h3 id="4-1包的导入"><a href="#4-1包的导入" class="headerlink" title="4.1包的导入"></a>4.1包的导入</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 直接导入包</span></span><br><span class="line"><span class="keyword">import</span> 包名 </span><br><span class="line"><span class="comment">## 通过包导入模块</span></span><br><span class="line"><span class="keyword">import</span> 包名.模块名 - 可以通过<span class="string">&#x27;包.模块.&#x27;</span> 去使用指定模块中的所有全局变量</span><br><span class="line"><span class="keyword">import</span> 包名.模块名 <span class="keyword">as</span> 新名称</span><br><span class="line"><span class="keyword">from</span> 包 <span class="keyword">import</span> 模块名/* (<span class="keyword">as</span>新名称)</span><br><span class="line"><span class="keyword">from</span> 包.模块 <span class="keyword">import</span> 变量名<span class="number">1</span>，变量名<span class="number">2</span> (<span class="keyword">as</span>新名称)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2包的导入原理"><a href="#4-2包的导入原理" class="headerlink" title="4.2包的导入原理"></a>4.2包的导入原理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">通过包导入包中的模块的时候,</span><br><span class="line">程序会先执行包中的__init__.py文件中的所有代码</span><br><span class="line">然后在执行导入的模块的所有代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3直接使用包中的快捷键"><a href="#4-3直接使用包中的快捷键" class="headerlink" title="4.3直接使用包中的快捷键"></a>4.3直接使用包中的快捷键</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> files <span class="keyword">import</span> read_excel</span><br><span class="line">read_excel()</span><br><span class="line"></span><br><span class="line">files.excel.read_excel()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lxmy.top/2021/09/13/17/" data-id="cktin32zv0008ocuc6t7z6aqn" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/13/18/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/13/16/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/09/13/26/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/25/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/24/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/23/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/13/22/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 徐明勇<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
